@@ -6,7 +6,8 @@ data=np.genfromtxt('SEC_ST_FILE_SSCACHE.dat',dtype=None,encoding=None,delimiter=
 file1=open('PER_FRAME.dat','w') #contains helixaverage of 5ns 250 frames
 data=np.char.array(data,unicode=True)
 lines=data.shape[0]
-nres=20 #number of residues in peptide chain
+nres=data.shape[1]-1 #number of residues in peptide chain
+print(f'Number of residues is {nres}')
 loop=nres+1
 H=[] #creating an empty list to store fraction helix values
 HGI=[]
